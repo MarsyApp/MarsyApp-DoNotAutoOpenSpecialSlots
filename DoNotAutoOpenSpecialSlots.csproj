@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>MarsyApp-DoNotAutoOpenSpecialSlots</AssemblyName>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>DoNotAutoOpenSpecialSlots</RootNamespace>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="0Harmony">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\BepInEx\core\0Harmony.dll</HintPath>
+		</Reference>
+		<Reference Include="Aki.Common">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\Aki.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="ItemComponent.Types">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\ItemComponent.Types.dll</HintPath>
+		</Reference>
+		<Reference Include="Aki.Reflection">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\Aki.Reflection.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="BepInEx">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\BepInEx\core\BepInEx.dll</HintPath>
+		</Reference>
+		<Reference Include="Comfort">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="Sirenix.Serialization">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\Sirenix.Serialization.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\UnityEngine.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PhysicsModule">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\UnityEngine.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestModule">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestTextureModule">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestWWWModule">
+			<HintPath>J:\myMods\develop\Shared\3.5.8\EscapeFromTarkov_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<PostBuildEvent>
+			copy "J:\myMods\develop\DoNotAutoOpenSpecialSlots\bin\Release\net472\MarsyApp-DoNotAutoOpenSpecialSlots.dll" "J:\downloads\SinglePlayerTarkov\BepInEx\scripts\MarsyApp-DoNotAutoOpenSpecialSlots.dll"
+		</PostBuildEvent>
+	</PropertyGroup>
+</Project>
