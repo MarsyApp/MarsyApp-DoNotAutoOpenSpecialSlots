@@ -1,0 +1,1 @@
+# MarsyApp-DoNotAutoOpenSpecialSlots
