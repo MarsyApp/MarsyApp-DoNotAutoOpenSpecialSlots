@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Aki.Reflection.Patching;
-using EFT;
-using EFT.InventoryLogic;
+using EFT.UI.DragAndDrop;
 
 namespace DoNotAutoOpenSpecialSlots
 {
@@ -25,7 +24,7 @@ namespace DoNotAutoOpenSpecialSlots
         {
             this._patches = new List<ModulePatch>
             {
-                new ItemViewPatches.ApplyDamageInfoPath(),
+                new ItemViewPatches.SearchableItemViewPatch(),
             };
         }
 
@@ -50,26 +49,18 @@ namespace DoNotAutoOpenSpecialSlots
 
     public static class ItemViewPatches
     {
-        public class ApplyDamageInfoPath : ModulePatch
+        public class SearchableItemViewPatch : ModulePatch
         {
             protected override MethodBase GetTargetMethod()
             {
-                return typeof(Player).GetMethod("ApplyDamageInfo", BindingFlags.Instance | BindingFlags.Public);
+                return typeof(SearchableItemView).GetMethod("method_0",
+                    BindingFlags.Instance | BindingFlags.NonPublic);
             }
 
             [PatchPrefix]
-            private static void PatchPrefix(ref DamageInfo damageInfo, EBodyPart bodyPartType, float absorbed, EHeadSegment? headSegment = null)
+            private static bool PatchPrefix(SearchableItemView __instance)
             {
-                if (damageInfo.DamageType == EDamageType.Landmine)
-                {
-                    int health = DoNotAutoOpenSpecialSlots.dictBodyParts[bodyPartType];
-
-                    if (damageInfo.Damage > health)
-                    {
-                        float random = UnityEngine.Random.Range(0, 0.8f);
-                        damageInfo.Damage = health * random;
-                    }
-                }
+                return !__instance.name.StartsWith("SpecialSlot");
             }
         }
     }

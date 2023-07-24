@@ -65,7 +65,7 @@
 
 	<PropertyGroup>
 		<PostBuildEvent>
-			copy "J:\myMods\develop\DoNotAutoOpenSpecialSlots\bin\Release\net472\MarsyApp-DoNotAutoOpenSpecialSlots.dll" "J:\downloads\SinglePlayerTarkov\BepInEx\scripts\MarsyApp-DoNotAutoOpenSpecialSlots.dll"
+			copy "J:\myMods\develop\MarsyApp-DoNotAutoOpenSpecialSlots\bin\Release\net472\MarsyApp-DoNotAutoOpenSpecialSlots.dll" "C:\games\EFT_3.5.8\BepInEx\plugins\MarsyApp-DoNotAutoOpenSpecialSlots.dll"
 		</PostBuildEvent>
 	</PropertyGroup>
 </Project>
